@@ -67,7 +67,7 @@ const Login = ({setIsLogin}) => {
             <button type='button' className='w-full bg-blue-700 text-sm text-white rounded-md hover:bg-blue-900 py-2' onClick={handleLogin}>Sign In </button>
           </form>
           <div className='flex'>
-            <p className='text-sm'>Belum Daftar Akun </p>
+            <p className='text-sm'>Not Registered Account?</p>
             <p className='text-sm text-blue-900'>
               <Link to="/register">
               &nbsp; Klick here!
