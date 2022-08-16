@@ -54,7 +54,7 @@ const Login = ({setIsLogin}) => {
         <section className='flex flex-col gap-8'>
           <div className='bg-blue-400 w-24 h-8'>
           </div>
-          <h1 className='font-bold text-4xl'>Welcome, Admin BCR</h1>
+          <h1 className='font-bold text-4xl'>Login</h1>
           <form>
             <div className='flex flex-col gap-2 mb-4'>
               <label className='text-sm'>Email</label>

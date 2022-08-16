@@ -33,6 +33,7 @@ const Register = () => {
       .then((res) => setResult(res.data.token))
       .catch((err) => console.log(err));
   };
+  
   useEffect(() => {
     const checkIfLogin = () => {
       const token = localStorage.getItem("token");

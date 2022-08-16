@@ -42,6 +42,7 @@ const Dashboard = () => {
     .then((res) => {
       if (res.status === 204) {
         setOpen(false)
+        console.log(id);
       }
     })
     .catch((err) => console.log(err))

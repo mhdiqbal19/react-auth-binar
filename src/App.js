@@ -7,6 +7,8 @@ import Dashboard from './Pages/Dashboard/Index';
 import ProtectedRoute from './HOC/ProtectedRoute/Index';
 import { useEffect, useState } from 'react';
 import DetailUser from './Pages/DetailUser/Index';
+import Belajar from './Pages/BelajarLCM/Index';
+import ListUser from './Pages/BelajarLCM/ListUser';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false)
@@ -27,15 +29,23 @@ function App() {
   return (
     <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/listUser' element={<ListUser/>} />
+        <Route path='/belajar' element={<Belajar/>}/>
         <Route path='/register' element={<Register/>} />
         <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
 
-        <Route path='/detailUser/:id' element={<DetailUser/>} />
+        
+        <Route path='/detailUser/:id' element={
+        <ProtectedRoute isLogin={isLogin}>
+        <DetailUser/>
+        </ProtectedRoute>
+        }/>
+
         <Route path='/dashboard' element={
         <ProtectedRoute isLogin={isLogin}>
           <Dashboard/>
         </ProtectedRoute>
-      }/>
+        }/>
     </Routes>
   )
 }
