@@ -6,6 +6,7 @@ import Register from './Pages/Register/Index';
 import Dashboard from './Pages/Dashboard/Index';
 import ProtectedRoute from './HOC/ProtectedRoute/Index';
 import { useEffect, useState } from 'react';
+import DetailUser from './Pages/DetailUser/Index';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false)
@@ -27,8 +28,9 @@ function App() {
     <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/register' element={<Register/>} />
-
         <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
+
+        <Route path='/detailUser/:id' element={<DetailUser/>} />
         <Route path='/dashboard' element={
         <ProtectedRoute isLogin={isLogin}>
           <Dashboard/>

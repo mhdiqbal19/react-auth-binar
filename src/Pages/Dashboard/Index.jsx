@@ -1,5 +1,5 @@
-import {useNavigate} from 'react-router-dom';
-import { Card, CardMedia, CardContent, CardActions, Typography, Dialog, DialogActions, DialogContent, DialogTitle, DialogContentText } from '@mui/material';
+import {Link, useNavigate} from 'react-router-dom';
+import { Card, CardMedia, CardContent, CardActions, Typography, Dialog, DialogActions, DialogContent, DialogTitle, DialogContentText, Button } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -72,11 +72,14 @@ const Dashboard = () => {
                 {item.email}
               </Typography>
             </CardContent>
-            <CardActions>
-              <button size="small" className="bg-green-500 text-white rounded-md p-2 hover:bg-green-700 flex items-center w-full justify-center" >Edit</button>
-              <button size="small" onClick={()=>{
+            <CardActions className='flex justify-center gap-3'>
+              <Link to={`/detailUser/${item.id}`}>
+              <Button variant="contained" color="primary">Edit</Button>
+              </Link>
+              <Button variant="contained" color="error" onClick={()=>{
                 setId(item.id)
-                handleClickOpen()}} className="bg-blue-500 text-white rounded-md p-2 hover:bg-blue-700 flex items-center w-full justify-center">Delete</button>
+                handleClickOpen()}}>Delete
+              </Button>
             </CardActions>
           </Card>
 

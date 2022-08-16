@@ -62,7 +62,7 @@ const Login = ({setIsLogin}) => {
             </div>
             <div className='flex flex-col gap-2 mb-8'>
               <label className='text-sm'>Password</label>
-              <input className='py-2 px-4 border border-gray-400 rounded-md text-gray-500 text-xs focus:outline-blue-400' type="password" name="email" placeholder='6+ Karakter' onChange={(e)=>handlePassword(e)}/>
+              <input className='py-2 px-4 border border-gray-400 rounded-md text-gray-500 text-xs focus:outline-blue-400' type="password" name="email" placeholder='6+ Character' onChange={(e)=>handlePassword(e)}/>
             </div>
             <button type='button' className='w-full bg-blue-700 text-sm text-white rounded-md hover:bg-blue-900 py-2' onClick={handleLogin}>Sign In </button>
           </form>
