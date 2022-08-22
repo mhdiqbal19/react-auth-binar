@@ -1,9 +1,14 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '../../HOC/ProtectedRoute/Context/AuthContext';
 import swal from 'sweetalert';
 
-const Login = ({setIsLogin}) => {
+const Login = () => {
+
+  const authData = useContext(AuthContext)
+  const {setIsLogin} = authData;
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [result, setResult] = useState();
